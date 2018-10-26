@@ -13,7 +13,7 @@ public class Conexion {
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];         /*String dbUrl = "jdbc:postgresql://"                  + HOST + "/" + DATABASE                 + "?user=" + USER + "&password="                 + PASS + "&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";*/
         String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-        if (CONEXION == null) {
+        if (CONEXION == null) { 
             try {
                 CONEXION = DriverManager.getConnection(dbUrl, username, password);//CONEXION = DriverManager.getConnection(dbUrl);
             } catch (SQLException e) {
