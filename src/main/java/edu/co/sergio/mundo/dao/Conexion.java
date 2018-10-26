@@ -15,7 +15,7 @@ public class Conexion {
         String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
         if (CONEXION == null) {
             try {
-                CONEXION = DriverManager.getConnection(dbUrl);
+                CONEXION = DriverManager.getConnection(dbUrl, username, password);//CONEXION = DriverManager.getConnection(dbUrl);
             } catch (SQLException e) {
                 System.out.println("Connection Failed! Check output console");
                 e.printStackTrace();
